@@ -21,7 +21,7 @@ app.use(passport.session());
 //setting up template engine 
 app.set("view engine", "ejs");  
 app.get('/', function (req, res) {
-  res.render('home.ejs');
+  res.render('home.ejs', {user: req.user});
 })
 
 // adding context to our request
