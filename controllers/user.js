@@ -32,7 +32,7 @@ exports.userAllspots = (req, res) => {
 }
 
 exports.demo = (req, res) => {
-    res.render('demo');
+    res.render('demo', {user: req.user});
 }
 
 
@@ -46,6 +46,7 @@ exports.userSpot = (req,res) => {
             where: {id: req.params.spotId}
         }).then(function(results){
             // rendering spot
+            console.log(comments[0].description)
             // console.log(results[0].dataValues.image);
             // let img = results[0].dataValues.image;
             res.render('spot', {spot: results, comments: comments})
@@ -66,13 +67,15 @@ exports.userLogin = passport.authenticate('local', {
 });
 
 // Post User so that they are able to add Comments to the page 
-// exports.addcomments = (req, res) => {
-//     req.context.db.comments.create({
-//         comments: req.body.addcomments
-//     }).then(function(){
-//         res.redirect('/user/spot');
-//     }).catch(function(err){
-//         console.log(err);
-//         res.json(err);
-//     });
-//  }
+exports.addcomments = (req, res) => {
+    let id = parseInt(req.body.spotId);
+    req.context.db.comments.create({
+        spotId: id,
+        description: req.body.comment
+    }).then(function(){
+        res.redirect('/user/spot/'+id);
+    }).catch(function(err){
+        console.log(err);
+        res.json(err);
+    });
+ }
