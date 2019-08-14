@@ -26,13 +26,18 @@
 <body id="home-img">
     <div class="container">
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
-            <a class="navbar-brand"><h1 class="stong">Home</h1></a>
+            <a class="navbar-brand"><h1 class="stong">Skate Hub</h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="nav-bar">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="/login">Login<span class="sr-only">(current)</span></a>
+                        <% if(user){ %>
+                            <a href="/user/logout" class="nav-item nav-link active"> Logout </a>
+                          <% } else{ %>
+                            <a href="/login"class="nav-item nav-link " active-color="orange">Login </a>
+                          <% } %>
+                   
                 </div>
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="/register">Register<span class="sr-only">(current)</span></a>
