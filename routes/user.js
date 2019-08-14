@@ -37,6 +37,6 @@ router.post( '/user/register', userController.signup );
 
 router.post( '/user/login', userController.userLogin );
 
-// router.post('/user/comments', isAuthenticated, userController.comments)
+router.post('/user/comments', isAuthenticated, userController.addcomments)
 
 module.exports = router;
