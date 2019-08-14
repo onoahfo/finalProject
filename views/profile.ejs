@@ -36,7 +36,7 @@
         <div id="box" class="text-left">
           <div id="profile-box">  
             <div class="ml-5 ">
-              <img  id="profile-img" src="https://gpluseurope.com/wp-content/uploads/Mauro-profile-picture.jpg" alt="Avatar" style="width:300px">
+              <img  id="profile-img" src="<%= user.avatar %>" alt="Avatar" style="width:300px">
               <br>
               <br>
               <h1 class="ml-2 "><%= user.firstName %> <%= user.lastName %></h1>
@@ -48,12 +48,19 @@
           <h2 id="spots" class="ml-5">Favorite spots</h2>
           <br>
           <br>
-            <div class="ml-5 ">
-                <img src="../img/park2.JPG" width="400px" height="350px">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+            <div class="ml-5 text-center">
+              <a href="/user/spot/1">
+                <img src="https://lh5.googleusercontent.com/p/AF1QipMVB--Gi2Q9s9yO7LvDPsri8ZsjAJaVUcQrhjf5=w408-h306-k-no" width="400px" height="350px">
+              </a>
                 <br>
                 <br>
                 <br>
-                <img src="../img/park3.jpg" width="400px" height="350px">
+                
             </div>
           </div>
       </div>
